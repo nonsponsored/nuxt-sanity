@@ -1,0 +1,76 @@
+
+
+/* NOTE: import statement have to come first */
+@import "~/assets/_base.scss";
+@import "~/assets/_typography.scss";
+
+
+body {
+	display: grid;
+}
+#__nuxt {
+	//background: rebeccapurple;
+}
+#__layout {
+	//background: firebrick;
+	//display: unset;
+	display: grid;
+	min-height: 100%;
+}
+#__layout > div {
+	//background-color: orangered;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+main {
+	flex: 1 0 auto;
+}
+
+
+
+main {
+	margin: 0 auto;
+	max-width: 680px;
+	padding: 100px 0;
+}
+
+img {
+	max-width: 100%;
+}
+figure {
+	margin: 0 0 40px;
+}
+figcaption {
+	font-size: 0.8rem;
+	padding-top: 10px;
+}
+
+
+
+
+.button--green {
+	border: 1px solid #3b8070;
+	border-radius: 4px;
+	color: #3b8070;
+	display: inline-block;
+	margin: 0 10px;
+	padding: 10px 30px;
+	text-decoration: none;
+}
+
+.button--green:hover,
+.button--green.nuxt-link-exact-active {
+	background-color: #3b8070;
+	color: #fff;
+}
+
+
+
+
+.page-enter-active, .page-leave-active {
+ 	transition: opacity .5s;
+}
+.page-enter, .page-leave-to {
+ 	opacity: 0;
+}

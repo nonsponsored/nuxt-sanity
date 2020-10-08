@@ -1,0 +1,18 @@
+h1 {
+	font-size: 30px;
+	line-height: 1.2;
+	margin: 0 0 50px;
+	text-align: center;
+}
+h6 {
+	font-size: 20px;
+	margin: 0 0 50px;
+}
+
+p {
+	line-height: 1.4;
+	
+	main > &:last-of-type {
+		margin-bottom: 50px;
+	}
+}

@@ -1,0 +1,29 @@
+{
+    "root": true,
+    "project": {
+        "name": "nuxt starter content"
+    },
+    "api": {
+        "projectId": "fyu8sik4",
+        "dataset": "production"
+    },
+    "plugins": [
+        "@sanity/base",
+        "@sanity/components",
+        "@sanity/default-layout",
+        "@sanity/default-login",
+        "@sanity/desk-tool",
+        "@sanity/vision",
+        "@sanity/production-preview"
+    ],
+    "parts": [
+        {
+            "name": "part:@sanity/base/schema",
+            "path": "./schemas/schema.js"
+        },
+        {
+            "implements": "part:@sanity/production-preview/resolve-production-url",
+            "path": "./resolveProductionUrl.js"
+        }
+    ]
+}

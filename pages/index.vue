@@ -3,7 +3,7 @@
     <h1 class="title">Hello</h1>
 
     <ul>
-      <li v-for="person in sanityPeople" :key="person._id">
+      <li v-for="person in this.people" :key="person._id">
         {{ person.name }}
 
         <ul v-if="person.social">
@@ -32,16 +32,37 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
+import { groq } from "@nuxtjs/sanity";
+import { urlFor } from "../store/modules/sanity-img-builder.js";
+
+const query = groq`*[_type == "person"]`;
 
 export default {
+  async fetch() {
+    this.people = await this.$sanity.fetch(query);
+
+    console.log(this.people);
+  },
+  fetchOnServer: true,
   data() {
     return {
-      social: "",
+      people: [],
     };
   },
-  computed: {
-    ...mapState(["sanityPeople"]),
+  head() {
+    return {
+      title: this.title,
+      meta: [
+        {
+          hid: "description",
+          name: "description",
+          content: this.title,
+        },
+      ],
+    };
+  },
+  methods: {
+    urlFor,
   },
 };
 </script>

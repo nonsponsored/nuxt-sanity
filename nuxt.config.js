@@ -1,14 +1,12 @@
 export default {
     target: 'static',
 
-
     app: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
     chunk: ({ isDev }) => isDev ? '[name].js' : '[chunkhash].js',
     css: ({ isDev }) => isDev ? '[name].css' : '[contenthash].css',
     img: ({ isDev }) => isDev ? '[path][name].[ext]' : 'img/[hash:7].[ext]',
     font: ({ isDev }) => isDev ? '[path][name].[ext]' : 'fonts/[hash:7].[ext]',
     video: ({ isDev }) => isDev ? '[path][name].[ext]' : 'videos/[hash:7].[ext]',
-
 
     /*
     ** Headers of the page
@@ -46,16 +44,21 @@ export default {
     ** Plugins to load before mounting the App
     */
     plugins: [
-        '~/plugins/preview.client.js',
-        '~/plugins/person.server.js',
-        '~/plugins/post.server.js'
+        '~/plugins/preview.client.js'
     ],
+    buildModules: ['@nuxtjs/sanity'],
     /*
     ** Nuxt.js modules
     */
     modules: [
 
     ],
+    sanity: {
+        projectId: 'fyu8sik4',
+        dataset: 'production',
+        useCdn: false,
+        withCredentials: true
+    },
     /*
     ** Build configuration
     */

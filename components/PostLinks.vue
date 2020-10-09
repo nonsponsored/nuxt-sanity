@@ -1,9 +1,15 @@
 <template>
   <div>
-    <router-link :to="`/post/${this.posts[0].slug}`" :class="`${linkClass}`"
+    <router-link
+      v-if="this.posts[0]"
+      :to="`/post/${this.posts[0].slug}`"
+      :class="`${linkClass}`"
       >MLS4THLOU</router-link
     >
-    <router-link :to="`/post/${this.posts[1].slug}`" :class="`${linkClass}`"
+    <router-link
+      v-if="this.posts[1]"
+      :to="`/post/${this.posts[1].slug}`"
+      :class="`${linkClass}`"
       >Pulisic</router-link
     >
   </div>

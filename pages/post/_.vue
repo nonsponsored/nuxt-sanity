@@ -29,13 +29,15 @@
 
 <script>
 import { groq } from "@nuxtjs/sanity";
-import { urlFor } from "../store/modules/sanity-img-builder.js";
+import { urlFor } from "../../store/modules/sanity-img-builder.js";
 
 const query = groq`*[_type == "post"]`;
 
 export default {
   async fetch() {
     this.posts = await this.$sanity.fetch(query);
+
+    console.log(this.posts);
   },
   fetchOnServer: true,
   data() {

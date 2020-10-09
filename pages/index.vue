@@ -26,27 +26,34 @@
       </li>
     </ul>
 
-    <nuxt-link to="/page-1/" class="button--green">Pulisic</nuxt-link>
-    <nuxt-link to="/page-2/" class="button--green">MLS4THLOU</nuxt-link>
+    <postLinks :linkClass="`button--green`" />
   </main>
 </template>
 
 <script>
 import { groq } from "@nuxtjs/sanity";
 import { urlFor } from "../store/modules/sanity-img-builder.js";
+import postLinks from "~/components/PostLinks.vue";
 
 const query = groq`*[_type == "person"]`;
+const query2 = groq`*[_type == "post"]`;
 
 export default {
   async fetch() {
     this.people = await this.$sanity.fetch(query);
 
-    console.log(this.people);
+    this.posts = await this.$sanity.fetch(query2);
+
+    //console.log(this.people);
   },
   fetchOnServer: true,
+  components: {
+    postLinks,
+  },
   data() {
     return {
       people: [],
+      posts: [],
     };
   },
   head() {

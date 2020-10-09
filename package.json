@@ -12,7 +12,7 @@
     },
     "dependencies": {
         "@nuxtjs/sanity": "^0.3.6",
-        "@sanity/client": "^0.141.6",
+        "@sanity/client": "^2.0.1",
         "@sanity/image-url": "^0.140.12",
         "nuxt": "^2.0.0"
     },

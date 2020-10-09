@@ -51,7 +51,7 @@ export default {
     ** Nuxt.js modules
     */
     modules: [
-
+        '@nuxtjs/style-resources'
     ],
     sanity: {
         projectId: 'fyu8sik4',
